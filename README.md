@@ -24,7 +24,6 @@ A API expõe *endpoints* RESTful para manipular os registros de passagem de plan
 | :--- | :--- | :--- |
 | `POST` | `/api/plantao/` | Cria e salva um novo registro de passagem de plantão. |
 | `GET` | `/api/plantao/` | Lista todos os registros de plantão existentes. |
-| `GET` | `/api/plantao/{id}` | Busca um registro específico pelo seu ID. |
 | `DELETE` | `/api/plantao/{id}` | Remove um registro específico pelo seu ID. |
 
 ---
