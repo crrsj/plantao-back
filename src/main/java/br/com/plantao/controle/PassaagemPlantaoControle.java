@@ -20,19 +20,17 @@ public class PassaagemPlantaoControle {
 	
 	@PostMapping
 	public ResponseEntity<PassagemPlantao>criarPlantao(@RequestBody PassagemPlantao passagemPlantao){
-		var criar = passagemPlantaoServico.criarPlantao(passagemPlantao);
-		return new ResponseEntity<>(criar, HttpStatus.CREATED);
+		return  ResponseEntity.status(HttpStatus.CREATED).body(passagemPlantaoServico.criarPlantao(passagemPlantao));
 	}
 	
 	@GetMapping
 	public ResponseEntity<List<PassagemPlantao>>listarPlantoes(){
-		var listar = passagemPlantaoServico.ListarPassagem();
-		return new ResponseEntity<>(listar, HttpStatus.OK);
+		return ResponseEntity.status(HttpStatus.OK).body(passagemPlantaoServico.ListarPassagem());
 	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void>excluir(@PathVariable Long id){
 		passagemPlantaoServico.excluir(id);
-		return ResponseEntity.noContent().build();
+		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 	}
 }
